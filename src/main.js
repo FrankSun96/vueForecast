@@ -3,21 +3,19 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import {store} from './store/store'
 
-Vue.use(VueAxios, axios)
-Vue.use(ElementUI, {locale})
+Vue.use(Vuetify)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  render: h => h(App),
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

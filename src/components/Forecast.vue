@@ -1,63 +1,55 @@
 <template>
-  <el-container>
-    <el-main>
-      <el-table
-        v-loading="loading"
-        :data="forecastData"
-        style="width: 100%">
-        <el-table-column
-          prop="date"
-          label="Date"
-          width="180">
-        </el-table-column>
-        <el-table-column
-          prop="minTemperature"
-          label="Minimum Temperature"
-          width="180">
-        </el-table-column>
-        <el-table-column
-          prop="maxTemperature"
-          label="Maximum Temperature">
-        </el-table-column>
-      </el-table>
-    </el-main>
-  </el-container>
+  <div class="main">
+    <Location></Location>
+    <Temperature></Temperature>
+  </div>
 </template>
-
 <script>
+import Location from '@/components/Location'
+import Temperature from '@/components/Temperature'
+
 export default {
-  name: 'Forecast',
+  name: 'forecast',
+  components: {
+    Location,
+    Temperature
+  },
   data () {
     return {
-      loading: true,
-      forecastData: [
-        {
-          date: null,
-          minTemperature: null,
-          maxTemperature: null,
-          day: null,
-          night: null
-        }
-      ]
     }
   },
-  mounted () {
-    this.axios
-      .get('http://dataservice.accuweather.com/forecasts/v1/daily/1day/3493380?apikey=vnNtXhMoB3Cq7rLQWtd1A7HL3kcSjQst&details=false')
-      .then(response => {
-        let forecast = response.data
-        this.data = forecast
-        this.forecastData[0].date = forecast.DailyForecasts[0]['Date']
-        this.forecastData[0].minTemperature = forecast.DailyForecasts[0]['Temperature']['Minimum']['Value'] + ' F'
-        this.forecastData[0].maxTemperature = forecast.DailyForecasts[0]['Temperature']['Maximum']['Value'] + ' F'
-        // this.day = forecast.DailyForecasts[0]['Temperature']['Day']['IconPhrase']
-        // this.night = forecast.DailyForecasts[0]['Temperature']['Night']['IconPhrase']
-        this.loading = false
-      })
+  created () {
+    this.$store.dispatch('initWeather')
   }
 }
 </script>
 
 <style scoped>
+  .main {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+  .app--day {
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  }
+  .app--night {
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  }
+  @media screen and (min-width: 450px) {
+    .main {
+      width: 330px;
+      height: 600px;
+      border-radius: 5px;
+    }
+  }
 </style>

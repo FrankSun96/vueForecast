@@ -6,7 +6,13 @@ import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import {store} from './store/store'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faWind, faTint, faCloudSun } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+library.add(faWind, faTint, faCloudSun)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.use(Vuetify)
 
 Vue.config.productionTip = false

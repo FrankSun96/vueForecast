@@ -36,7 +36,7 @@ export default {
   }
 
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Krub, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: rgba(255, 255, 255, 0.9);
@@ -54,6 +54,7 @@ export default {
     width: 100vw;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -63,7 +64,7 @@ export default {
   }
 
   .app--night {
-    background-color: #09203f;
+    background-color: #6a85b6;
   }
 
   .app--day a:hover {

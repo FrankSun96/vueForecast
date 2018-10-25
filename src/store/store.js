@@ -15,7 +15,8 @@ export const store = new Vuex.Store({
     wind: 0,
     humidity: 0,
     weather_index: 0,
-    pressure: 0
+    pressure: 0,
+    description: ''
   },
   getters: {
     location (state) {
@@ -24,11 +25,26 @@ export const store = new Vuex.Store({
     temperature (state) {
       return state.temp
     },
-    max_temperature(state) {
+    max_temperature (state) {
       return state.temp_max
     },
-    min_temperature(state) {
+    min_temperature (state) {
       return state.temp_min
+    },
+    wind (state) {
+      return state.wind
+    },
+    humidity (state) {
+      return state.humidity
+    },
+    pressure (state) {
+      return state.pressure
+    },
+    description (state) {
+      return state.description
+    },
+    weather_index (state) {
+      return state.weather_index
     }
   },
   mutations: {
@@ -41,6 +57,7 @@ export const store = new Vuex.Store({
       state.humidity = weather.humidity
       state.pressure = weather.pressure
       state.weather_index = weather.weather_index
+      state.description = weather.description
       console.log('done')
     }
   },
@@ -60,6 +77,7 @@ export const store = new Vuex.Store({
           weather.humidity = forecast.main.humidity
           weather.weather_index = forecast.weather[0].id
           weather.pressure = forecast.main.pressure
+          weather.description = forecast.weather[0].description
           context.commit('initWeather', weather)
         })
     }

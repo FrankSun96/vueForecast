@@ -41,23 +41,38 @@ export default {
     .container-temp{
       display: inline-flex;
       flex-direction: row;
-      justify-content: center;
       align-items: baseline;
       .large-font {
+        position: relative;
+        top: -0.2em;
+        right: -0.05em;
         @include font;
         font-size: 15em;
         font-weight: 200;
       }
       .temp {
+        position: relative;
+        top: -6em;
+        right:-0.5em;
         @include font;
         font-size: 2em;
-        font-weight: 300;
+        font-weight: 400;
       }
     }
     .container-min-max {
       display: flex;
       flex-direction: row;
       justify-content: center;
+    }
+  }
+  @media screen and (max-width: 410px) {
+    .large-font {
+      position: relative;
+      top: -0.2em;
+      right:-0.05em;
+      @include font;
+      font-size: 18em;
+      font-weight: 200;
     }
   }
 </style>

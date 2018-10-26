@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Forecast from '@/components/Forecast'
+import Forecast from '@/components/ForecastToday'
 Vue.use(Router)
 
 export default new Router({

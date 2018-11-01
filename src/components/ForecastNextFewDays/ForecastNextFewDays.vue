@@ -1,11 +1,24 @@
 <template>
   <div class="main">
+    <one-day v-for="weather in next5days" :weather="weather"></one-day>
   </div>
 </template>
 
 <script>
+import OneDay from '@/components/ForecastNextFewDays/OneDay'
 export default {
-  name: 'ForecastNextFewDays'
+  name: 'ForecastNextFewDays',
+  created () {
+    this.$store.dispatch('initNext5DaysWeather')
+  },
+  components: {
+    OneDay
+  },
+  computed: {
+    next5days () {
+      return this.$store.getters.next5days
+    }
+  }
 }
 </script>
 

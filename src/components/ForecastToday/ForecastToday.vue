@@ -9,11 +9,11 @@
   </div>
 </template>
 <script>
-import Location from '@/components/Location'
-import Temperature from '@/components/Temperature'
-import Others from '@/components/Others'
-import Icon from '@/components/Icon'
-import Description from '@/components/Description'
+import Location from '@/components/ForecastToday/Location'
+import Temperature from '@/components/ForecastToday/Temperature'
+import Others from '@/components/ForecastToday/Others'
+import Icon from '@/components/ForecastToday/Icon'
+import Description from '@/components/ForecastToday/Description'
 export default {
   name: 'Forecast',
   components: {

@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import ForecastToday from '@/components/ForecastToday'
-import ForecastNextDays from '@/components/ForecastNextFewDays'
+import ForecastToday from '@/components/ForecastToday/ForecastToday'
+import ForecastNextDays from '@/components/ForecastNextFewDays/ForecastNextFewDays'
 import Swiper from 'swiper/dist/js/swiper.min'
 export default {
   name: 'App',

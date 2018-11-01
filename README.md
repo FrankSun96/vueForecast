@@ -1,6 +1,22 @@
 # forecast
 
-> A Vue.js project
+#### A Vue.js project   
+###### `back-end API : WeatherAPI`
+* webpack + vue + vuex 
+* mobile web app
+* background color will be changed depend on time
+* 5 days forecast
+
+
+<span><img src="https://github.com/FrankSun96/vueForecast/blob/master/src/assets/now1.jpg" height="30%" width="30%">
+<img src="https://github.com/FrankSun96/vueForecast/blob/master/src/assets/now2.jpg" height="30%" width="30%"></span>
+<br>
+<span><img src="https://github.com/FrankSun96/vueForecast/blob/master/src/assets/now3.jpg" height="30%" width="30%">
+<img src="https://github.com/FrankSun96/vueForecast/blob/master/src/assets/now4.jpg" height="30%" width="30%"></span>
+
+
+`reference : https://github.com/jimmerioles/progressive-weather-app`
+
 
 ## Build Setup
 
